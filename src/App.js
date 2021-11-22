@@ -87,8 +87,8 @@ function App() {
                 );
                 if (saleAmount > 0) {
 
-                    // const USDCCon = await USDCContract.approve(saleAddr, saleAmount * Math.pow(10, 6));
-                    // await USDCCon.wait();
+                    const USDCCon = await USDCContract.approve(saleAddr, saleAmount * Math.pow(10, 6));
+                    await USDCCon.wait();
                     const saleCon = await saleContract.buyVerseToken(saleAmount);
                     await saleCon.wait();
                     alert("successfully buyed")
